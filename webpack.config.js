@@ -33,15 +33,16 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 3000,
     open: true,
     historyApiFallback: { index: '/' },
     disableHostCheck: true,
     proxy: {
-      '/api/**': {
-        target: 'http://0.0.0.0:8080',
+      '/api': {
+        target: 'http://localhost:8080',
         secure: false,
         changeOrigin: true
       }
