@@ -68,7 +68,7 @@ export default class User extends Component {
   createDevice(devicename, devicepass) {
     this.deviceFormRef.current.closeModal();
 
-    fetch('/api/devices', {
+    fetch('0.0.0.0:8080/api/devices', {
       mode: 'cors',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
