@@ -16,7 +16,7 @@ export default class User extends Component {
     this.parent = props.parent;
     this.deviceFormRef = React.createRef();
 
-    fetch('/api/userDevices/', {
+    fetch('http://35.243.93.59/api/userDevices/', {
       mode: 'cors',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -68,7 +68,7 @@ export default class User extends Component {
   createDevice(devicename, devicepass) {
     this.deviceFormRef.current.closeModal();
 
-    fetch('0.0.0.0:8080/api/devices', {
+    fetch('http://35.243.93.59:8080/api/devices', {
       mode: 'cors',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
