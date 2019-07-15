@@ -79,7 +79,7 @@ export default class DeviceCard extends Component {
       this.socket.emit('server-alarm-change', {room: this.devicename, devicename: this.devicename, value: false});
     } else {
       this.setState({disableAlarm: true});
-      this.socket.emit('server-alarm-change', {room: this.id.devicename, devicename: this.devicename, value: true});
+      this.socket.emit('server-alarm-change', {room: this.devicename, devicename: this.devicename, value: true});
     }
   }
 
