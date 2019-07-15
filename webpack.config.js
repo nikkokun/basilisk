@@ -40,10 +40,10 @@ module.exports = {
     historyApiFallback: { index: '/' },
     disableHostCheck: true,
     proxy: {
-      'http://0.0.0.0/api': 'http://0.0.0.0:8080',
-      'http://0.0.0.0/socket.io': {
-        target: 'http://0.0.0.0:666',
-        ws: true
+      '/api/**': {
+        target: 'http://0.0.0.0:8080',
+        secure: false,
+        changeOrigin: true
       }
     }
   },
