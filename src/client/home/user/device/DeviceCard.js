@@ -17,7 +17,7 @@ export default class DeviceCard extends Component {
     this.devicename = props.devicename;
     this.devicepass = props.devicepass;
     this.parent = props.parent;
-    this.socket = io.connect('socket.io/');
+    this.socket = io.connect('35.243.93.59:666');
   }
 
   componentDidMount() {
