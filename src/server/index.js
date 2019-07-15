@@ -342,4 +342,4 @@ app.get('/api/health_check', async (req, res) => {
     });
 });
 
-app.listen(8080, '0.0.0.0', () => console.log('Listening on port 8080!'));
+app.listen(8080, 'localhost', () => console.log('Listening on port 8080!'));
