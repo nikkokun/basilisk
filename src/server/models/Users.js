@@ -45,6 +45,8 @@ module.exports = class Users {
       AND password = crypt('${inputPassword}', password);
     `;
 
+    console.info(sql);
+
     const results = await this.pool.query(sql);
     return results;
   }
