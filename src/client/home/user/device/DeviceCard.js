@@ -40,10 +40,10 @@ export default class DeviceCard extends Component {
   handleEnable() {
     if(this.state.isEnabled == true) {
       this.setState({disableEnable: true});
-      this.socket.emit('server-enable-change', {room: this.id.toString(), devicename: this.devicename, value: false});
+      this.socket.emit('server-enable-change', {room: this.devicename, devicename: this.devicename, value: false});
     } else {
       this.setState({disableEnable: true});
-      this.socket.emit('server-enable-change', {room: this.id.toString(), devicename: this.devicename, value: true});
+      this.socket.emit('server-enable-change', {room: this.devicename, devicename: this.devicename, value: true});
     }
   };
   renderAlert() {
@@ -62,7 +62,7 @@ export default class DeviceCard extends Component {
 
   handleResetAlert() {
     this.setState({disableAlert: true});
-    this.socket.emit('server-alert-change', {room: this.id.toString(), devicename: this.devicename, value: false});
+    this.socket.emit('server-alert-change', {room: this.devicename, devicename: this.devicename, value: false});
   }
 
   renderAlarm() {
@@ -76,10 +76,10 @@ export default class DeviceCard extends Component {
   handleAlarm() {
     if(this.state.isAlarm == true) {
       this.setState({disableAlarm: true});
-      this.socket.emit('server-alarm-change', {room: this.id.toString(), devicename: this.devicename, value: false});
+      this.socket.emit('server-alarm-change', {room: this.devicename, devicename: this.devicename, value: false});
     } else {
       this.setState({disableAlarm: true});
-      this.socket.emit('server-alarm-change', {room: this.id.toString(), devicename: this.devicename, value: true});
+      this.socket.emit('server-alarm-change', {room: this.id.devicename, devicename: this.devicename, value: true});
     }
   }
 
