@@ -15,6 +15,11 @@ const devices = new Devices();
 
 const app = express();
 app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Crentials", false);
+  next();
+});
 app.use(express.static('dist'));
 app.use(bodyParser.urlencoded({
   extended: true
