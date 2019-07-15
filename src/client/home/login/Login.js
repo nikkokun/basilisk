@@ -13,7 +13,7 @@ export default class Login extends Component {
 
   authenticate() {
     this.setState({isButtonDisabled: true});
-    fetch('http://0.0.0.0/api/login/', {
+    fetch('http://localhost/api/login/', {
       mode: 'cors',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
