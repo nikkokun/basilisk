@@ -14,6 +14,7 @@ const users = new Users();
 const devices = new Devices();
 
 const app = express();
+app.use(cors());
 app.use(express.static('dist'));
 app.use(bodyParser.urlencoded({
   extended: true
@@ -167,7 +168,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(400)
       .send({
         success: 'false',
-        message: results
+        message: 'error'
       });
   }
   results = results.rows;
