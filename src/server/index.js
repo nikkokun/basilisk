@@ -167,7 +167,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(400)
       .send({
         success: 'false',
-        message: 'error'
+        message: results
       });
   }
   results = results.rows;
