@@ -17,7 +17,7 @@ export default class DeviceCard extends Component {
     this.devicename = props.devicename;
     this.devicepass = props.devicepass;
     this.parent = props.parent;
-    this.socket = io.connect('localhost/socket.io');
+    this.socket = io.connect('socket.io/');
   }
 
   componentDidMount() {
@@ -38,6 +38,7 @@ export default class DeviceCard extends Component {
   };
 
   handleEnable() {
+    this.socket.emit('test-server');
     if(this.state.isEnabled == true) {
       this.setState({disableEnable: true});
       this.socket.emit('server-enable-change', {room: this.id.toString(), devicename: this.devicename, value: false});
