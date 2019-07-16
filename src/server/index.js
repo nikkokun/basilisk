@@ -66,7 +66,7 @@ server.on("connection", (socket) => {
     socket.emit('test-client', data);
   });
 
-  socket.on('server-read-device', (data) => {
+  socket.on('server-read-device', async (data) => {
     let result = await devices.readDevice(data.devicename);
     result = {'enabled': result['is_enabled'], 'alarm': ['is_alarm'], 'alert': ['is_alert']};
     server.sockets.in(data.room).emit('client-read-device', result);
