@@ -66,6 +66,12 @@ server.on("connection", (socket) => {
     socket.emit('test-client', data);
   });
 
+  socket.on('server-read-device', (data) => {
+    let result = await devices.readDevice(data.devicename);
+    result = {'enabled': result['is_enabled'], 'alarm': ['is_alarm'], 'alert': ['is_alert']};
+    server.sockets.in(data.room).emit('client-read-device', result);
+  });
+
   socket.on('server-enable-change', async (data) => {
     const result = await onEnableChange(data.devicename, data.value);
     console.log(result);
