@@ -23,6 +23,8 @@ export default class DeviceCard extends Component {
   componentDidMount() {
     // this.socket.on("seq-num", (msg) => console.info(msg));
     this.socket.emit('join-room', {room: this.devicename});
+    this.socket.emit('server-read-device', {room: this.devicename, devicename: this.devicename});
+    this.socket.on('client-read-device', (data) => console.info(data));
     this.socket.on('test-client', (data) => console.info(data));
     this.socket.on('client-enable-change', (data) => this.setState({isEnabled: data.is_enabled, disableEnable: false}));
     this.socket.on('client-alert-change', (data) => this.setState({isAlert: data.is_alert, disableAlert: false}));
