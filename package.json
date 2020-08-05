@@ -22,7 +22,7 @@
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "express": "^4.16.3",
-    "express-fileupload": "^1.1.1-alpha.2",
+    "express-fileupload": "^1.1.9",
     "express-session": "^1.15.6",
     "pg": "^7.8.0",
     "pg-hstore": "^2.3.2",
